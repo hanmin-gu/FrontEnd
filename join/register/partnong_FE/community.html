@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>community</title>
+    <style>
+        .pagination {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pagination li {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav -->
+
+    <!-- 검색창  -->
+    <div>
+        <form class="search-form">
+            <label for="keyword"></label>
+            <input type="text" id="keyword" name="keyword" placeholder="제목으로 검색하세요">
+            <button type="submit">검색</button>
+        </form>
+    </div>
+    <!-- 급여지급, 봉사 카테고리 구분란 필요 -->
+    <div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <!-- /테이블 인덱스 -->
+                <!-- /저장된 글 loop&출력 -->
+                <tbody id="tableBody"></tbody>
+
+            </table>
+            <ul class="pagination" id="pagination">
+                <li><a href="#" onclick="previousPage()">&lt;</a></li>
+                <!-- 페이지 번호 버튼 -->
+                <li><a href="#" onclick="nextPage()">&gt;</a></li>
+            </ul>
+
+        </div>
+        <button type="button">글 작성</button>
+        <!-- /글작성 버튼 로그인 확인 필요 -->
+    </div>
+    <script src="./js/community.js"></script>
+</body>
+
+
+</html>
