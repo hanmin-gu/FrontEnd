@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+
+<body>
+    <div id="include-nav"></div>
+
+
+
+    
+    <script>
+        // JavaScript를 사용하여 nav페이지를 동적으로 로드.
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('include-nav').innerHTML = data;
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</body>
+
+</html>

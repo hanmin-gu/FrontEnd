@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>write</title>
+</head>
+
+<body>
+	<!-- nav -->
+
+	<div class="container" style="padding-top: 20px;">
+		<div class="row">
+			<div class="table-responsive">
+				<form action="save.jsp" method="post">
+					<table>
+						<thead>
+							<tr>
+								<th>글작성</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td><input type="text" class="form-control" placeholder="제목" name="title" id="title">
+								</td>
+							</tr>
+
+							<tr>
+								<td><textarea class="form-control" placeholder="내용" name="content" id="content"
+										style="height: 350px"></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+					<input type="submit" class="btn btn-primary" value="저장">
+				</form>
+				<form method="post" action="board.html">
+					<input type="submit" value="돌아가기">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
