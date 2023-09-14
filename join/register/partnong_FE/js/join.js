@@ -42,3 +42,24 @@ document.addEventListener("DOMContentLoaded", function () {
   
     });
   });
+
+  // 생년월일 변환
+  function formatNumber(input) {
+    if (/^\d{8}$/.test(input)) {
+      return input.slice(0, 4) + '-' + input.slice(4, 6) + '-' + input.slice(6, 8);
+    } else {
+      alert('올바른 8자리 숫자를 입력하세요.');
+    }
+  }
+
+  function formatBirth() {
+    var inputElement = document.getElementById('birth');
+    var inputValue = inputElement.value.replace(/\D/g, ''); // 숫자 이외의 문자 제거
+
+    if (inputValue.length >= 8) {
+        var formattedValue = inputValue.slice(0, 4) + '-' + inputValue.slice(4, 6) + '-' + inputValue.slice(6, 8);
+        inputElement.value = formattedValue;
+    } else {
+        inputElement.value = inputValue;
+    }
+}
