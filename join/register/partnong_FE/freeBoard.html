@@ -4,21 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>board</title>
+    <title>free_board</title>
+    <link rel="stylesheet" href="css/reset.css">
+
 </head>
 
 <body>
     <!-- nav -->
+    <div id="navContainer"></div>
 
     <!-- 검색창  -->
     <div>
+        <p>자유게시판</p>
         <form class="search-form">
             <label for="keyword"></label>
             <input type="text" id="keyword" name="keyword" placeholder="제목으로 검색하세요">
             <button type="submit">검색</button>
         </form>
+        <a href="#">작성하기</a>
+        <!-- /글작성 버튼 로그인 확인 필요 -->
     </div>
-    <!-- 급여지급, 봉사 카테고리 구분란 필요 -->
+
     <div>
         <div>
             <table>
@@ -26,29 +32,27 @@
                     <tr>
                         <th>번호</th>
                         <th>제목</th>
-                        <th>작성자</th>
-                        <th>작성연월일</th>
+                        <th>작성일</th>
                         <th>조회수</th>
                     </tr>
                 </thead>
                 <!-- /테이블 인덱스 -->
-                <br>
-                <tbody>
-                    <tr>
-                        <td>글번호</td>
-                        <td><a href="#">글제목</a></td>
-                        <td>글작성자</td>
-                        <td>글작성일자</td>
-                        <td>조회수</td>
-                    </tr>
-                </tbody>
                 <!-- /저장된 글 loop&출력 -->
-                <!-- 페이징 처리 -->
+                <tbody id="tableBody"></tbody>
+
             </table>
+            <ul class="pagination" id="pagination">
+                <li><a href="#" onclick="previousPage()">&lt;</a></li>
+                <!-- 페이지 번호 버튼 -->
+                <li><a href="#" onclick="nextPage()">&gt;</a></li>
+            </ul>
+
         </div>
-        <button type="button">글 작성</button>
-        <!-- /글작성 버튼 로그인 확인 필요 -->
+
     </div>
+
+    <script src="./js/nav.js"></script>
+    <script src="./js/freeboard.js"></script>
 </body>
 
 

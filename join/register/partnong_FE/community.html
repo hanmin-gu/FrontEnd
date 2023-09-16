@@ -20,16 +20,12 @@
 
 <body>
     <!-- nav -->
+    <div id="navContainer"></div>
 
-    <!-- 검색창  -->
-    <div>
-        <form class="search-form">
-            <label for="keyword"></label>
-            <input type="text" id="keyword" name="keyword" placeholder="제목으로 검색하세요">
-            <button type="submit">검색</button>
-        </form>
-    </div>
-    <!-- 급여지급, 봉사 카테고리 구분란 필요 -->
+    <div class="community_main_img">css에서 이미지 작업하기<!--url(../img/header_bg.jpg)center top repeat-x --></div>
+    <!-- 자유게시판, 봉사 파트농 더보기> 수정해야함  -->
+    <a href="freeboard.html">자유게시판</a>
+    <a href="volunteerPartnerBoard.html">봉사 파트농</a>
     <div>
         <div>
             <table>
@@ -38,7 +34,7 @@
                         <th>번호</th>
                         <th>제목</th>
                         <th>작성일</th>
-                        <th>조회수</th>
+                        <th>조회</th>
                     </tr>
                 </thead>
                 <!-- /테이블 인덱스 -->
@@ -46,6 +42,7 @@
                 <tbody id="tableBody"></tbody>
 
             </table>
+            <!-- 페이징 처리 -->
             <ul class="pagination" id="pagination">
                 <li><a href="#" onclick="previousPage()">&lt;</a></li>
                 <!-- 페이지 번호 버튼 -->
@@ -53,9 +50,12 @@
             </ul>
 
         </div>
-        <button type="button">글 작성</button>
+        <a href="community_write.html">글 작성</a>
+        <!-- <button type="button">글 작성</button> -->
         <!-- /글작성 버튼 로그인 확인 필요 -->
     </div>
+    
+    <script src="./js/nav.js"></script>
     <script src="./js/community.js"></script>
 </body>
 

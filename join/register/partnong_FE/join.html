@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>join</title>
+    <link rel="stylesheet" href="css/reset.css">
+
 </head>
 
 <body>
     <!-- nav -->
-
+    <div id="navContainer"></div>
     <!-- content-->
     <div id="content">
         <form>
@@ -64,7 +66,8 @@
                     <label for="birth">생년월일</label>
                 </h3>
                 <span class="box birth">
-                    <input type="text" id="birth" class="int" maxlength="8" placeholder="생년월일입력">
+                    <input type="text" id="birth" maxlength="10" placeholder="생년월일입력 ex)20231231"
+                        oninput="formatBirth()">
                 </span>
                 <span class="error_next_box"></span>
             </div>
@@ -88,7 +91,10 @@
 
         </form>
     </div>
+
+    <script src="./js/nav.js"></script>
     <script src="./js/join.js"></script>
+    
 </body>
 
 </html>
