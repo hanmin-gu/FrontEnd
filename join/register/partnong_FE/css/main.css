@@ -1,0 +1,23 @@
+.img-container {
+    position: relative;
+    text-align: center;
+}
+
+.center-image {
+    display: block;
+    margin: 0 auto;
+}
+
+.center-text {
+    position: absolute;
+    top: 40%; /* 텍스트 상하 이동 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-btn {
+    position: absolute;
+    top: 50%; /* 텍스트 상하 이동 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

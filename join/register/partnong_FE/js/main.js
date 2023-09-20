@@ -91,7 +91,33 @@ function updatePage(page) {
 updatePage(currentPage);
 
 
-
+// json 예시
+/*
+{
+    "title": "감자캐기",
+    "status": "모집중",
+    "date": "2023-09-23",
+    "capacity": "2명",
+    "duration": "3시간",
+    "location": "대전",
+    "time": "20:59-23:59"
+  }
+  */
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      // JSON 데이터를 HTML 요소에 적용
+      document.getElementById('title').textContent = data.title;
+      document.getElementById('status').textContent = data.status;
+      document.getElementById('date').textContent = data.date;
+      document.getElementById('capacity').textContent = data.capacity;
+      document.getElementById('duration').textContent = data.duration;
+      document.getElementById('location').textContent = data.location;
+      document.getElementById('time').textContent = data.time;
+    })
+    .catch(error => {
+      console.error('JSON 파일 로드 중 오류 발생:', error);
+    });
 
 
 
