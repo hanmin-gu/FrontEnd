@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>봉사 글 작성</title>
-    <link rel="stylesheet" href="css/reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/volunteer_write.css">
 
 </head>
 
@@ -15,105 +16,69 @@
     <!-- nav -->
     <div id="navContainer"></div>
 
-    <p>구인하기</p>
-    <div class="container text-center">
-        <div class="row" style=" display: flex; flex-direction: column; align-items: center;">
-            <div class="col">
+    <form class="post_community">
+        <div class="container text-center">
+            <div class="row" style=" display: flex; flex-direction: column; align-items: center;">
+                <!-- 페이지 제목 -->
+                <div class="row">
+                    <div class="col">구인하기</div>
+                </div>
+                <!-- 글 제목 -->
                 <div class="row row-cols-2">
-                    <!-- 작성 글 제목 없어서 한칸 더넣음 -->
-                    <div class="col">Column1-1</div>
-                    <div class="col">Column1-2</div>
+                    <div class="col-3">글 제목</div>
+                    <div class="col-9"><textarea placeholder="제목을 작성해주세요" id="detailTitle"></textarea></div>
+                </div>
+                <!-- 일시 -->
+                <div class="row row-cols-2">
+                    <div class="col-3">일시</div>
+                    <div class="col-9" style="display: flex; justify-content: center;">
+                        <p>근무날짜<input type="date" value="2023-09-23"></p>
+                        <p>근무시작시간<input id="startTime" type="time" value="00:00:00"></p>
+                        <p>근무종료시간<input id="endTime" type="time" value="00:00:00"></p>
+                    </div>
+                </div>
+                <!-- 시간 -->
+                <div class="row row-cols-2">
+                    <div class="col-3">시간</div>
+                    <div class="col-9">
+                        <p id="result"></p>
+                    </div>
+                </div>
+                <!-- 주소 -->
+                <div class="row row-cols-2">
+                    <div class="col-3">주소</div>
+                    <div class="col-9">
+                        <input type="text" placeholder="주소입력" id="locationInfo">
+                    </div>
+                </div>
+                <!-- 업무 -->
+                <div class="row row-cols-2">
+                    <div class="col-3">업무</div>
+                    <div class="col-9"><input type="text" placeholder="업무내용" id="job"></div>
+                </div>
+                <!-- 상세내용 -->
+                <div class="row row-cols-2">
+                    <div class="col-3">상세내용</div>
+                    <div class="col-9"><textarea placeholder="상세내용" id="content" style="height: 350px"></textarea></div>
+                </div>
+                <!-- 사진첨부  -->
+                <div class="row row-cols-2">
+                    <div class="col-3">사진첨부</div>
+                    <div class="col-9"><input type="file" id="imageInput" accept="image/*"></div>
+                </div>
+                <!-- 우대사항  -->
+                <div class="row row-cols-2">
+                    <div class="col-3">우대사항</div>
+                    <div class="col-9"><input type="text" placeholder="업무내용" id="preferredQualification"></div>
+                </div>
+                <!-- 게시하기 버튼 -->
+                <div class="row">
+                    <div class="col"><input type="submit" value="게시하기"></div>
                 </div>
             </div>
-            <div class="row row-cols-2">
-                <div class="col">Column2-1</div>
-                <div class="col">Column2-2</div>
-            </div>
-            <div class="row row-cols-2">
-                <div class="col">Column3-1</div>
-                <div class="col">Column3-2</div>
-            </div>
-            <div class="row row-cols-2">
-                <div class="col">Column4-1</div>
-                <div class="col">Column4-2</div>
-            </div>
-            <div class="row row-cols-2">
-                <div class="col">Column5-1</div>
-                <div class="col">Column5-2</div>
-            </div>
-            <div class="row row-cols-2">
-                <div class="col">Column6-1</div>
-                <div class="col">Column6-2</div>
-            </div>
-            <div class="row row-cols-2">
-                <div class="col">Column7-1</div>
-                <div class="col">Column7-2</div>
-            </div>
-            <div class="row row-cols-2">
-                <div class="col">Column8-1</div>
-                <div class="col">Column8-2</div>
-            </div>
-            <div class="row">
-                <div class="col">Column8-1</div>
-            </div>
+            <button onclick="goBack()">돌아가기</button>
         </div>
-    </div>
-
-
-    <div>
-        <form class="post_community">
-            <table>
-                <thead>
-                    <tr>
-                        <th>구인하기</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>
-                            <p>근무날짜<input type="date" value="2023-09-23"></p>
-                        </td>
-                        <td>
-                            <p>근무시작시간<input id="startTime" type="time" value="00:00:00"></p>
-                        </td>
-                        <td>
-                            <p>근무종료시간<input id="endTime" type="time" value="00:00:00"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>시간</td>
-                        <td>
-                            <p id="result"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>주소<input type="text" placeholder="주소입력" id="locationInfo"></td>
-                    </tr>
-                    <tr>
-                        <td>업무<input type="text" placeholder="업무내용" id="job"></td>
-                    </tr>
-                    <tr>
-                        <td>상세내용<textarea placeholder="상세내용" id="content" style="height: 350px"></textarea></td>
-                    </tr>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="file" id="imageInput" accept="image/*">
-                        </td>
-                    </tr>
-                    </tr>
-                    <tr>
-                        <td>우대사항<input type="text" placeholder="업무내용" id="preferredQualification"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div>
-                <input type="submit" value="게시하기">
-            </div>
-        </form>
-        <button onclick="goBack()">돌아가기</button>
-    </div>
+    </form>
 
     <!-- body -->
     <script src="js/nav.js"></script>

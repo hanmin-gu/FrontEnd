@@ -40,6 +40,9 @@ function confirmTitle() {
     if (dateInput.trim() === '') {
         alert("일시를 입력해주세요");
         return false;
+    } else if (detailTitle.trim() === '') {
+        alert("제목을 입력해주세요.");
+        return false;
     } else if (startTimeInput.trim() === '') {
         alert("시작시간을 입력해주세요.");
         return false;
