@@ -8,9 +8,9 @@ const jsonData = {
     "우대사항": "우대사항 내용입니다."
 };
 
-let combinedTimeText = "아이콘1: " + jsonData["시간"];
-let combinedDateText = "아이콘2: " + jsonData["일시"];
-let combinedLocationInfoText = "아이콘3: " + jsonData["지역"];
+let combinedTimeText = "시간: " + jsonData["시간"];
+let combinedDateText = "일시: " + jsonData["일시"];
+let combinedLocationInfoText = "지역: " + jsonData["지역"];
 
 document.getElementById('headTime').textContent = combinedTimeText;
 document.getElementById('headDate').textContent = combinedDateText;
