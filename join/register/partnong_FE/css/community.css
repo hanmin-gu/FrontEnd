@@ -35,12 +35,21 @@
     /* 모서리를 직각으로 설정 */
 }
 
-.select-board:hover+label.select-board{
+.select-board:hover+label.select-board {
     color: black;
 }
 
-  /* 테이블 헤더에 배경색을 적용하는 CSS 선택자 */
+/* 테이블 헤더에 배경색을 적용하는 CSS 선택자 */
 table.table.table-bordered thead tr th {
     background-color: rgb(223, 223, 223);
-  }  
-  
+}
+
+.more {
+    display: flex;
+    font-size: 15px;
+    font-weight: 550;
+    color: black;
+    text-decoration: none;
+    text-align: right;
+    float: right;
+}
