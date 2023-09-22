@@ -23,6 +23,7 @@ var loginCheckElement = document.getElementById("login-check");
 if (loginCheckElement) {
     if (isUserLoggedIn()) {
         // 로그인 상태인 경우
+        loginCheckElement.textContent = "마이페이지";
         window.location.href = 'http://localhost:8081/mypage'
     } else {
         // 로그인 상태가 아닌 경우
