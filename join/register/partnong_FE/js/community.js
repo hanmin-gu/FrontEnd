@@ -27,85 +27,56 @@ var articles = [
     { 번호: 25, 제목: '두 번째 글', 작성일: '2023-09-15', 조회수: 200 }
 ];
 
-var tableBody = document.getElementById('tableBody');
-var pagination = document.getElementById('pagination');
-var itemsPerPage = 10; // 페이지당 표시할 항목 수
-var currentPage = 1; // 현재 페이지
+// HTML 요소를 찾기 위한 부모 요소를 선택합니다.
+var container = document.querySelector('.container.text-center');
 
-// 이전 페이지로 이동
-function previousPage() {
-    if (currentPage > 1) {
-        updatePage(currentPage - 1);
-    }
-}
+// 테이블 요소를 생성합니다.
+var table = document.createElement('table');
+table.className = 'table table-bordered'; // Bootstrap 테이블 스타일 클래스
 
-// 다음 페이지로 이동
-function nextPage() {
-    var totalPages = Math.ceil(articles.length / itemsPerPage);
-    if (currentPage < totalPages) {
-        updatePage(currentPage + 1);
-    }
-}
+// 테이블 헤더를 생성합니다.
+var thead = document.createElement('thead');
+var headerRow = document.createElement('tr');
 
-// 페이지를 업데이트하는 함수
-function updatePage(page) {
-    tableBody.innerHTML = ''; // 테이블 내용 초기화
-    var startIndex = (page - 1) * itemsPerPage;
-    var endIndex = startIndex + itemsPerPage;
-    var displayedArticles = articles.slice(startIndex, endIndex);
+var headers = ['번호', '제목', '작성일', '조회수'];
 
-    // 글 목록을 테이블에 추가
-    for (var i = 0; i < displayedArticles.length; i++) {
-        var article = displayedArticles[i];
-        var row = document.createElement('tr');
+headers.forEach(function (headerText) {
+  var th = document.createElement('th');
+  th.textContent = headerText;
+  headerRow.appendChild(th);
+});
 
-        // 각 열에 데이터 추가
-        var 번호Cell = document.createElement('td');
-        번호Cell.textContent = article.번호;
-        row.appendChild(번호Cell);
+thead.appendChild(headerRow);
+table.appendChild(thead);
 
-        var 제목Cell = document.createElement('td');
-        var 제목Link = document.createElement('a');
-        제목Link.href = '#'; // 링크 URL 설정
-        제목Link.textContent = article.제목;
-        제목Cell.appendChild(제목Link);
-        row.appendChild(제목Cell);
+// 테이블 바디를 생성합니다.
+var tbody = document.createElement('tbody');
 
-        var 작성일Cell = document.createElement('td');
-        작성일Cell.textContent = article.작성일;
-        row.appendChild(작성일Cell);
+articles.forEach(function (article) {
+  var row = document.createElement('tr');
 
-        var 조회수Cell = document.createElement('td');
-        조회수Cell.textContent = article.조회수;
-        row.appendChild(조회수Cell);
+  var columns = ['번호', '제목', '작성일', '조회수'];
 
-        // 행을 테이블에 추가
-        tableBody.appendChild(row);
+  columns.forEach(function (column) {
+    var td = document.createElement('td');
+
+    // 제목 열인 경우 <a> 태그로 생성
+    if (column === '제목') {
+      var link = document.createElement('a');
+      link.href = ''; // 여기에 링크 URL을 설정하세요.
+      link.textContent = article[column];
+      td.appendChild(link);
+    } else {
+      td.textContent = article[column];
     }
 
-    // 페이징 컨트롤 업데이트
-    var totalPages = Math.ceil(articles.length / itemsPerPage);
-    var paginationHTML = '';
+    row.appendChild(td);
+  });
 
-    paginationHTML += '<li><a href="#" onclick="previousPage()">&lt;</a></li>';
-    for (var i = 1; i <= totalPages; i++) {
-        paginationHTML += '<li><a href="#" onclick="updatePage(' + i + ')"';
-        if (i === page) {
-            paginationHTML += ' class="active"';
-        }
-        paginationHTML += '>' + i + '</a></li>';
-    }
-    paginationHTML += '<li><a href="#" onclick="nextPage()">&gt;</a></li>';
+  tbody.appendChild(row);
+});
 
-    pagination.innerHTML = paginationHTML;
-    currentPage = page; // 현재 페이지 업데이트
-}
+table.appendChild(tbody);
 
-// 페이지 초기화
-updatePage(currentPage);
-
-
-
-
-
-
+// 생성된 테이블을 부모 요소에 추가합니다.
+container.appendChild(table);
