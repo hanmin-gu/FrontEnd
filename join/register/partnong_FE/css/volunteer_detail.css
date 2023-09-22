@@ -29,6 +29,21 @@
     max-height: 100px;
 }
 
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: #efc633;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
 @media (min-width: 400px) {
     .headIcon {
         display: flex;
