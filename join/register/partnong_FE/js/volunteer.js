@@ -28,9 +28,9 @@ jsonjobData.forEach(function (job) {
 function addRegionTab(tabId, tabText) {
   // 새로운 탭을 생성
   var newTab = document.createElement('li');
-  newTab.classList.add('nav-item');
+  newTab.classList.add('nav-items');
   newTab.innerHTML = `
-              <a class="nav-link" id="${tabId}-tab" data-bs-toggle="tab" href="#${tabId}" role="tab"
+              <a class="nav-link top_category" id="${tabId}-tab" data-bs-toggle="tab" href="#${tabId}" role="tab"
                   aria-controls="${tabId}" aria-selected="false">${tabText}</a>
           `;
 
@@ -43,7 +43,7 @@ function addRegionTab(tabId, tabText) {
 function addJobTab(tabId, tabText) {
   // 새로운 탭을 생성
   var newTab = document.createElement('li');
-  newTab.classList.add('nav-item');
+  newTab.classList.add('nav-items');
   newTab.innerHTML = `
               <a class="nav-link" id="${tabId}-tab" data-bs-toggle="tab" href="#${tabId}" role="tab"
                   aria-controls="${tabId}" aria-selected="false">${tabText}</a>

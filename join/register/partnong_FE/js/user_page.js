@@ -8,6 +8,7 @@ json파일 예시
     "numOfActivity":  "7"
 }
 */
+document.getElementById('email').textContent = "이메일" + lasdjsghkadfgmail.com;
 
 // JSON 데이터를 가져오는 비동기 함수
 async function fetchJsonData() {
@@ -34,3 +35,4 @@ async function fetchJsonData() {
 
 // 페이지 로드 후 데이터를 가져오도록 호출
 fetchJsonData();
+

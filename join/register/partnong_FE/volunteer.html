@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/volunteer.css">
     <style>
         /* 지역, 업무 높이 지정후 스크롤 조정기능 */
         .accordion-body {
@@ -29,13 +29,19 @@
     <!-- nav -->
     <div id="navContainer"></div>
     <!-- 개인/단체 구분 -->
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="numOfPeople" id="personal" autocomplete="off" checked>
-        <label class="btn btn-outline-primary" for="personal">개인</label>
-
-        <input type="radio" class="btn-check" name="numOfPeople" id="group" autocomplete="off">
-        <label class="btn btn-outline-primary" for="group">단체</label>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <input type="radio" class="btn-check ct-1" name="numOfPeople" id="personal" autocomplete="off" checked>
+                <label class="btn btn-outline-primary ct-1" for="personal">개인</label>
+            </div>
+            <div class="col">
+                <input type="radio" class="btn-check ct-1" name="numOfPeople" id="group" autocomplete="off">
+                <label class="btn btn-outline-primary ct-1" for="group">단체</label>
+            </div>
+        </div>
     </div>
+
 
 
     <!-- 지역구분 -->
@@ -59,7 +65,7 @@
                         <!-- 특별ㆍ광역시 -->
                         <div class="tab-pane fade" id="regionCategory1" role="tabpanel" aria-labelledby="category1-tab">
                             <div class="custom-user-menu_box">
-                                <p id="regionCategory1Content"></p>
+                                <p style="width: 100%;" id="regionCategory1Content"></p>
                                 <div id="regionCategory1Buttons" class="row row-cols-1 row-cols-sm-2 row-cols-md-5">
                                 </div>
                             </div>
