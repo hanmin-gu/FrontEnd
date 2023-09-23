@@ -59,40 +59,84 @@
     border: 1px solid black;
 }
 
-#regionCategory1-tab{
+#regionCategory1-tab {
     text-align: center;
     font-size: 10px;
-    text-align: center;}
+    text-align: center;
+}
 
-#regionCategory1-tab:active{
-    background-color: red;}
 
-    .overlay-link {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(243, 215, 6, 0.7);
-        /* 배경색을 추가하여 링크를 덮습니다. */
-        color: #fff;
-        /* 링크 텍스트 색상 설정 */
-        text-align: center;
-        padding: 10px;
-        /* 링크 내부 여백 설정 */
-        opacity: 0;
-        /* 초기에 숨깁니다. */
-        transition: opacity 0.3s ease;
-        /* 투명도 전환 효과 추가 */
-        width: 100%;
-        /* 너비를 100%로 설정하여 수평 가운데 정렬 */
-        height: 100%;
-        /* 높이를 100%로 설정하여 수직 가운데 정렬 */
-        line-height: 15;
-        /* 원하는 높이에 따라 조정 가능 */
-    }
 
-    .card:hover .overlay-link {
-        opacity: 1;
-        /* 마우스 오버 시 투명도를 1로 변경하여 덮기 효과를 표시합니다. */
-    }
+
+.overlay-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(243, 215, 6, 0.7);
+    /* 배경색을 추가하여 링크를 덮습니다. */
+    color: #fff;
+    /* 링크 텍스트 색상 설정 */
+    text-align: center;
+    padding: 10px;
+    /* 링크 내부 여백 설정 */
+    opacity: 0;
+    /* 초기에 숨깁니다. */
+    transition: opacity 0.3s ease;
+    /* 투명도 전환 효과 추가 */
+    width: 100%;
+    /* 너비를 100%로 설정하여 수평 가운데 정렬 */
+    height: 100%;
+    /* 높이를 100%로 설정하여 수직 가운데 정렬 */
+    line-height: 15;
+    /* 원하는 높이에 따라 조정 가능 */
+}
+
+.card:hover .overlay-link {
+    opacity: 1;
+    /* 마우스 오버 시 투명도를 1로 변경하여 덮기 효과를 표시합니다. */
+}
+
+
+
+
+/* 탭 배경색과 폰트 스타일 */
+.nav-items {
+    background-color: white;
+    /* 탭 배경색 지정 */
+    border-radius: 0;
+    border-color: #efc633;
+    color: #fff;
+    /* 탭 폰트 색상 지정 */
+    font-weight: normal;
+    /* 탭 폰트 굵기 지정 */
+    padding: 2px;
+    /* 탭 내부 여백 지정 */
+    border-radius: 5px;
+    /* 탭 모서리 둥글게 만들기 */
+}
+
+/* 버튼 배경색과 폰트 스타일 */
+.btn.btn-outline-primary {
+    background-color: white;
+    /* 버튼 배경색 지정 */
+    color: black;
+    /* 버튼 폰트 색상 지정 */
+    font-weight: bold;
+    /* 버튼 폰트 굵기 지정 */
+    margin: 5px;
+    /* 버튼 간격 지정 */
+}
+
+/* 선택된 버튼 스타일 (활성 버튼 스타일) */
+.btn-check:checked+label {
+    background-color: #e74c3c;
+    /* 선택된 버튼의 배경색 지정 */
+}
+
+/* 선택된 탭 스타일 (활성 탭 스타일) */
+.nav-link.active {
+    background-color: #e74c3c;
+    /* 선택된 탭의 배경색 지정 */
+}

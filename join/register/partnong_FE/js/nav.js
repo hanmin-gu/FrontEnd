@@ -50,3 +50,4 @@ if (loginCheckElement) {
         window.location.href = '로그인 url작성해주세요'
     }
 }
+
