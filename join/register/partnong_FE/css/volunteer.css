@@ -66,3 +66,33 @@
 
 #regionCategory1-tab:active{
     background-color: red;}
+
+    .overlay-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(243, 215, 6, 0.7);
+        /* 배경색을 추가하여 링크를 덮습니다. */
+        color: #fff;
+        /* 링크 텍스트 색상 설정 */
+        text-align: center;
+        padding: 10px;
+        /* 링크 내부 여백 설정 */
+        opacity: 0;
+        /* 초기에 숨깁니다. */
+        transition: opacity 0.3s ease;
+        /* 투명도 전환 효과 추가 */
+        width: 100%;
+        /* 너비를 100%로 설정하여 수평 가운데 정렬 */
+        height: 100%;
+        /* 높이를 100%로 설정하여 수직 가운데 정렬 */
+        line-height: 15;
+        /* 원하는 높이에 따라 조정 가능 */
+    }
+
+    .card:hover .overlay-link {
+        opacity: 1;
+        /* 마우스 오버 시 투명도를 1로 변경하여 덮기 효과를 표시합니다. */
+    }
