@@ -109,6 +109,10 @@
 .more {
   margin-right: 19px;
 }
+.partnong {
+  font-size: 40px;
+}
+
 @media (max-width: 400px) {
   .overlay-link {
     line-height: 15;
